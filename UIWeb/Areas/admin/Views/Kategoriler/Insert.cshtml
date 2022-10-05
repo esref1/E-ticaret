@@ -1,0 +1,25 @@
+﻿<a href="/admin/Kategoriler" class="btn btn-primary" style="margin-bottom:15px;">Geri Git</a>
+
+<form action="/admin/Kategoriler/Insert" method="post">
+    <input type="text" placeholder="Kategori Adı" name="Name" class="form-control" style="margin-bottom:10px;" />
+    <select class="form-control" name="Status" style="margin-bottom:10px;">
+        <option value="True">Aktif</option>
+        <option value="False">Pasif</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+
+</form>
+<div class="col-md-12" style="margin-top:15px;">
+    @if (Model != null)
+    {
+        if (Model.StatusCode == Core.Results.ComplexTypes.StatusCode.Success)
+        {
+            <div class="alert alert-success">@Model.UserMessage</div>
+        }
+        else
+        {
+            <div class="alert alert-danger">@Model.UserMessage</div>
+        }
+    }
+</div>

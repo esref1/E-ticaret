@@ -1,0 +1,30 @@
+﻿<div class="col-md-12">
+    <div class="col-md-12" style="background-color:#f3f3f3;margin-bottom:15px;padding:15px;">SİPARİŞLER</div>
+    <table class="table talbe-bordered">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Müşteri</td>
+                <td>Ödeme Tipi</td>
+                <td>Sipariş Tarihi</td>
+                <td>Sipariş Tutarı</td>
+                <td>Sipariş Durumu</td>
+                <td>İşlem</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="vertical-align:middle">@item.Id</td>
+                    <td style="vertical-align:middle">@item.Customers.NameSurname</td>
+                    <td style="vertical-align:middle">@item.PaymentType</td>
+                    <td style="vertical-align:middle">@item.OrderDate</td>
+                    <td style="vertical-align:middle">@item.TotalPrice.ToString("N") TL</td>
+                    <td style="vertical-align:middle">@item.OrderStatus</td>
+                    <td style="vertical-align:middle"><a href="/admin/detay/@item.Id" class="btn btn-primary">Detay</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

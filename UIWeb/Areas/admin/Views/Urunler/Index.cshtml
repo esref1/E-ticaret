@@ -1,0 +1,27 @@
+﻿
+<a href="/admin/Urunler/Insert" class="btn btn-primary" style="margin-bottom:15px">Yeni Ekle</a>
+<table class="table table-bordered">
+    <tr>
+        <td>#</td>
+        <td>Ürün</td>
+        <td>Ürün Adı</td>
+        <td>Stok</td>
+        <td>Fiyat</td>
+        <td>İşlemler</td>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="vertical-align:middle">@item.Id</td>
+            <td><img src="/images/@item.MainImage" width="70" /></td>
+            <td style="vertical-align:middle">@item.Name</td>
+            <td style="vertical-align:middle">@item.Stock</td>
+            <td style="vertical-align:middle">@item.Price.ToString("N")</td>
+            <td style="vertical-align:middle">
+                <a href="/Admin/Urunler/Update/@item.Id" class="btn btn-primary">Güncelle</a>
+                <a href="/Admin/Urunler/Delete/@item.Id" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>

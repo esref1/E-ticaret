@@ -1,0 +1,17 @@
+AOP/bin
+AOP/obj
+Business/obj
+Business/bin
+DataAccess/obj
+DataAccess/bin
+Entities/obj
+Entities/bin
+Eticaret/obj
+Eticaret/bin
+UIWeb/obj
+UIWeb/bin
+Core/bin
+Core/obj
+.idea
+.vs
+git rm -r --cached bin

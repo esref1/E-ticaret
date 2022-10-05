@@ -1,0 +1,35 @@
+﻿<a href="/admin/Musteriler" class="btn btn-primary" style="margin-bottom:15px;">Geri Git</a>
+
+<form action="/admin/Musteriler/Update/@Model.Id" method="post">
+    <input type="text" placeholder="Müşteri Adı Soyadı" name="NameSurname" value="@Model.NameSurname" class="form-control" style="margin-bottom:10px;" />
+    <input type="text" placeholder="Email" name="Email" class="form-control" value="@Model.Email" style="margin-bottom:10px;" />
+    <input type="text" placeholder="Telefon" name="Phone" class="form-control" value="@Model.Phone" style="margin-bottom:10px;" />
+    <input type="password" placeholder="Şifre" name="Password" value="@Model.Password" class="form-control" style="margin-bottom:10px;" />
+    <select class="form-control" name="Status" style="margin-bottom:10px;">
+        @if (Model.Status)
+        {
+            <option value="True">Aktif</option>
+            <option value="False">Pasif</option>
+        }
+        else
+        {
+            <option value="False">Pasif</option>
+            <option value="True">Aktif</option>
+        }
+    </select>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+
+</form>
+<div class="col-md-12" style="margin-top:15px;">
+    @if (ViewBag.Message != null)
+    {
+        if (ViewBag.Message.StatusCode == Core.Results.ComplexTypes.StatusCode.Success)
+        {
+            <div class="alert alert-success">@ViewBag.Message.UserMessage</div>
+        }
+        else
+        {
+            <div class="alert alert-danger">@ViewBag.Message.UserMessage</div>
+        }
+    }
+</div>

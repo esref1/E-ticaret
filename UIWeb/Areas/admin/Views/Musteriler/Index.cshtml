@@ -1,0 +1,24 @@
+﻿
+<a href="/admin/Musteriler/Insert" class="btn btn-primary" style="margin-bottom:15px;">Yeni Ekle</a>
+<table class="table table-bordered">
+    <tr>
+        <td>#</td>
+        <td>Müşteri</td>
+        <td>Email</td>
+        <td>Telefon</td>
+        <td>İşlemler</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.NameSurname</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>
+                <a href="/Admin/Musteriler/Update/@item.Id" class="btn btn-primary">Güncelle</a>
+                <a href="/Admin/Musteriler/Delete/@item.Id" class="btn btn-danger">Sil</a>
+            </td>
+        </tr>
+    }
+</table>
